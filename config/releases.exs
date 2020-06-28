@@ -1,8 +1,7 @@
 # In this file, we load production configuration and secrets
 # from environment variables. You can also hardcode secrets,
-# although such is generally not recommended and you have to
-# remember to add this file to your .gitignore.
-use Mix.Config
+# although such is generally not recommended.
+import Config
 
 database_url =
   System.get_env("DATABASE_URL") ||
@@ -24,6 +23,7 @@ secret_key_base =
     """
 
 config :chirp, ChirpWeb.Endpoint,
+  url: [host: System.get_env("HOST", "localhost"), port: 80],
   http: [
     port: String.to_integer(System.get_env("PORT") || "4000"),
     transport_options: [socket_opts: [:inet6]]
@@ -35,7 +35,7 @@ config :chirp, ChirpWeb.Endpoint,
 # If you are doing OTP releases, you need to instruct Phoenix
 # to start each relevant endpoint:
 #
-#     config :chirp, ChirpWeb.Endpoint, server: true
+config :chirp, ChirpWeb.Endpoint, server: true
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
