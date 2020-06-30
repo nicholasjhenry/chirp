@@ -3,3 +3,10 @@
 Build a real-time Twitter clone in 15 minutes with LiveView and Phoenix 1.5 - Chris McCord
 
 https://www.phoenixframework.org/blog/build-a-real-time-twitter-clone-in-15-minutes-with-live-view-and-phoenix-1-5
+
+And beyond...
+
+Docker and Kubernetes configuration loosely based on:
+
+- https://www.shanesveller.com/blog/2018/10/28/kubernetes-native-phoenix-apps-part-1/
+- https://www.shanesveller.com/blog/2018/11/16/kubernetes-native-phoenix-apps-part-3/

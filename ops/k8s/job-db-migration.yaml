@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: chirp-migration-0
+  labels:
+    app: chirp
+spec:
+  template:
+    metadata:
+      labels:
+        app: chirp
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: chirp
+          image: chirp:latest
+          imagePullPolicy: IfNotPresent
+          args: ["eval", "Chirp.Release.migrate"]
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          envFrom:
+            - configMapRef:
+                name: chirp-env
+            - secretRef:
+                name: chirp-env-secret
+          resources: {}

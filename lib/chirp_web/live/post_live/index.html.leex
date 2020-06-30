@@ -1,4 +1,4 @@
-<h1>Timeline</h1>
+<h1>Timeline (POD_ID: <%= System.get_env("POD_IP", "none") %>)</h1>
 
 <%= if @live_action in [:new, :edit] do %>
   <%= live_modal @socket, ChirpWeb.PostLive.FormComponent,
