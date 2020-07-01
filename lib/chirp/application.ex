@@ -6,7 +6,10 @@ defmodule Chirp.Application do
   use Application
 
   def start(_type, _args) do
+    topologies = Application.get_env(:libcluster, :topologies)
+
     children = [
+      {Cluster.Supervisor, [topologies, [name: Chirp.ClusterSupervisor]]},
       # Start the Ecto repository
       Chirp.Repo,
       # Start the Telemetry supervisor

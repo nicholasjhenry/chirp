@@ -51,3 +51,12 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which loads secrets
 # and configuration from environment variables.
+
+config :libcluster,
+  topologies: [
+    el_kube: [
+      strategy: Elixir.Cluster.Strategy.Kubernetes.DNS,
+      config: [
+        service: "chirp-headless",
+        application_name: "chirp", # AKA release_name (See env.sh.eex)
+        polling_interval: 10_000]]]

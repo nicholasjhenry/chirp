@@ -5,7 +5,8 @@ cluster.config:
 cluster.deploy:
 	kubectl apply -f ops/k8s/job-db-migration.yaml
 	kubectl apply -f ops/k8s/deployment.yaml
-	kubectl apply -f ops/k8s/service.yaml
+	kubectl apply -f ops/k8s/service-headless.yaml
+	kubectl apply -f ops/k8s/service-public.yaml
 
 cluster.deploy.force:
 	kubectl rollout restart deployment/chirp

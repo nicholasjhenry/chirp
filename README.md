@@ -6,7 +6,8 @@ https://www.phoenixframework.org/blog/build-a-real-time-twitter-clone-in-15-minu
 
 And beyond...
 
-Docker and Kubernetes configuration loosely based on:
+Docker, Kubernetes and Erlang node cluster onfiguration loosely based on:
 
 - https://www.shanesveller.com/blog/2018/10/28/kubernetes-native-phoenix-apps-part-1/
 - https://www.shanesveller.com/blog/2018/11/16/kubernetes-native-phoenix-apps-part-3/
+- https://itnext.io/elixir-plus-kubernetes-part-1-80129eab14f0 (Erlang Node Cluster)
